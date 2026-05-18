@@ -231,4 +231,15 @@ python3 plot.py
 - `speed_comparison.png` — 各方法 2048 矩阵下的耗时与加速比
 - `scaling.png` — 不同矩阵规模的性能缩放 (log-log)
 - `efficiency.png` — 512 vs 4096 小/大矩阵的并行效率对比
+
+### 三实验对比 (`matrix-opt/`)
+
+- `benchmark_3exp.sh` — 跑 gemm/conv/pooling 的基准测试
+- `bench_3exp.csv` — 三实验原始数据
+- `plot_3exp.py` — 生成对比图表
+- `3exp_scaling.png` — 三实验并行缩放对比
+- `conv_comparison.png` — 卷积 naive vs img2col
+- `comm_compute_ratio.png` — 通信开销分析
+- `3exp-principles.md` — 三实验原理详解（矩阵划分、通信模式、算法分析）
+- `report.md` — 完整实验报告（含理论验证）
 >>>>>>> 5f24a5a (首次提交：初始化项目)
