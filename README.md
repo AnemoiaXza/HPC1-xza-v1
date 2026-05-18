@@ -148,6 +148,8 @@ python3 plot_3exp.py    # 三实验图表
 
 ### 图 1：各方法最佳性能对比 (speed_comparison.png)
 
+![speed_comparison](matrix-opt/speed_comparison.png)
+
 **内容**：2048×2048 矩阵下，四种方法（Serial / OpenMP / MPI-SharedMem / MPI-Original）的最优耗时和加速比曲线。
 
 **结果**：
@@ -163,7 +165,7 @@ python3 plot_3exp.py    # 三实验图表
 ---
 
 ### 图 2：矩阵规模缩放 (scaling.png)
-
+![scaling](matrix-opt/scaling.png)
 **内容**：log-log 坐标系下，四种方法的最优耗时随矩阵规模（512→1024→2048→4096）的变化。
 
 **结果**：四条曲线均近似直线，斜率约 3，趋势完全平行。Serial 在最上方，OpenMP 在最下方。
@@ -175,7 +177,7 @@ python3 plot_3exp.py    # 三实验图表
 ---
 
 ### 图 3：小矩阵 vs 大矩阵并行效率 (efficiency.png)
-
+![img3](matrix-opt/efficiency.png)
 **内容**：512×512（左）和 4096×4096（右）下，OpenMP 和 MPI-SharedMem 的加速比随 worker 数的变化。
 
 **结果**：
@@ -190,7 +192,7 @@ python3 plot_3exp.py    # 三实验图表
 ---
 
 ### 图 4：三实验并行缩放 (3exp_scaling.png)
-
+![img4](matrix-opt/3exp_scaling.png)
 **内容**：1024×1024 下 gemm/conv-naive/conv-img2col/pooling 四个 MPI 程序的绝对耗时和加速比。
 
 **结果**：
@@ -206,7 +208,7 @@ python3 plot_3exp.py    # 三实验图表
 ---
 
 ### 图 5：卷积 naive vs img2col (conv_comparison.png)
-
+![conv_comparison](matrix-opt/conv_comparison.png)
 **内容**：左图为 np=1 时两种卷积的时间随矩阵规模变化；右图为 img2col 相对 naive 的加速比。
 
 **结果**：
@@ -221,7 +223,7 @@ python3 plot_3exp.py    # 三实验图表
 ---
 
 ### 图 6：通信开销分析 (comm_compute_ratio.png)
-
+![comm_compute_ratio](matrix-opt/comm_compute_ratio.png)
 **内容**：左图为归一化时间增长率对比（O(n³) vs O(n²) vs 极轻计算）；右图为 np=4 相对 np=1 的通信开销百分比。
 
 **结果**：
